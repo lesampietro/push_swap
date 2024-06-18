@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 21:58:01 by lsampiet          #+#    #+#              #
-#    Updated: 2024/06/10 00:16:13 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/06/18 18:25:50 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ NEW_OBJ=$(C_NEW:%.c=%.o)
 
 CC= cc
 
-C_FLAGS= -Wall -Werror -Wextra
+C_FLAGS= -g3 -Wall -Werror -Wextra
 
 $(NAME): $(C_OBJ)
 

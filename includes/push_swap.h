@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/06/17 20:04:47 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/06/18 18:57:33 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+enum e_legible
+{
+	CONSULT = -1,
+	OFF,
+	ON,
+};
+
 int	ft_error(void);
+
+#endif

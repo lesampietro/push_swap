@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 19:54:47 by lsampiet          #+#    #+#              #
-#    Updated: 2024/06/17 19:57:27 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/06/18 18:24:42 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC_D= ./src/
 CC= cc
 HEADER_M= ./includes/push_swap.h
 LIBS= $(LIBFT)/libft.a
-SRC= push_swap.c
+SRC= push_swap.c \
+	utils.c
 
 SRC:= $(addprefix $(SRC_D),$(SRC))
 
@@ -34,11 +35,11 @@ libft:
 
 $(BIN)%.o: $(SRC_D)%.c
 	mkdir -p $(BIN)
-	$(CC) $(C_FLAGS) -o $@ -c $< && echo "Compiling: $(notdir $<)"
+	$(CC) $(C_FLAGS) -g3 -o $@ -c $< && echo "Compiling: $(notdir $<)"
 
 $(NAME): $(C_OBJS) libft
 	echo "Creating $(NAME)"
-	$(CC) $(C_OBJS) $(LIBS) $(INCLUDES) -o $(NAME)
+	$(CC) $(C_OBJS) $(LIBS) $(INCLUDES) -o $(NAME) -g3 $(C_FLAGS)
 
 clean:
 	echo "Cleaning objects..."
