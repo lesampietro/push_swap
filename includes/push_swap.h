@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/06/18 18:57:33 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:45:04 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 # include "../libs/ft_printf/includes/ft_printf.h"
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct s_stack t_stack;
+
+struct s_stack
+{
+	int	*stack;
+	int	size;
+};
 
 enum e_legible
 {
