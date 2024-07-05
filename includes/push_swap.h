@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/05 17:32:16 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/05 18:22:45 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ enum e_legible
 // Functions to check arguments
 int				get_size(char **args);
 int				is_integer(char **split_args);
+int				check_ascii(char **args);
 int				*check_args(int size, char **argv, int *int_args);
 void			check_argc(int argc, char **argv);
-void			check_ascii(char *str, int *int_args);
-int				check_duplicates(int *int_args, int size);
+int				check_duplicates(char **split_args);
 int				is_empty(char **str);
 	// static int	first_time(int status);
 
@@ -60,7 +60,7 @@ int				is_empty(char **str);
 	// Functions to display the stack
 
 	// Error and free functions
-	int ft_error(void);
-void				free_array(char **args);
+int				ft_arg_error(char **split_args);
+void			free_array(char **args);
 
 #endif

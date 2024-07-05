@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/05 17:39:12 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/05 18:24:28 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,36 +34,31 @@ int	is_empty(char **str)
 void	check_argc(int argc, char **argv)
 {
 	int		i;
-	int		x;
 	char	**split_args;
 	
+	i = 0;
 	split_args = NULL;
 	if (argc == 1)
-		ft_error();
-	x = 1;
-	i = 0;
-	while (argv[x])
+		ft_putendl_fd("Error", 2);
+	while (argv[++i])
 	{
-		split_args = ft_split(argv[x], ' ');
+		split_args = ft_split(argv[i], ' ');
 		if (is_empty(split_args) == 1)
-		{
-			free_array(split_args);
-			ft_error();
-		}
+			ft_arg_error(split_args);
+		if (check_ascii(split_args) == 1)
+			ft_arg_error(split_args);
 		if (is_integer(split_args) == 1)
-		{
-			free_array(split_args);
-			ft_error();
-		}
+			ft_arg_error(split_args);
 		free_array(split_args);
-		x++;
-	}
+	}	
 }
 
 int	main(int argc, char **argv)
 {
-
+	// int		*numbers;
+	
 	check_argc(argc, argv);
+	// numbers = transform_args(argc, argv);
 	return (0);
 }
 
