@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 21:58:01 by lsampiet          #+#    #+#              #
-#    Updated: 2024/06/18 18:25:50 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/07/05 17:05:04 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME=libft.a
 
 C_SOURCE= ft_isalnum.c \
 				 ft_atoi.c \
+				 ft_atol.c \
 				 ft_bzero.c \
 				 ft_calloc.c \
 				 ft_isalpha.c \

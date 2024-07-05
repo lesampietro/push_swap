@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/05 16:51:05 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/05 17:39:12 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	get_size(char **args)
 		i++;
 	return (i);
 }
+
 int	is_empty(char **str)
 {
 	if (!*str)
@@ -35,10 +36,8 @@ void	check_argc(int argc, char **argv)
 	int		i;
 	int		x;
 	char	**split_args;
-	long	nbr;
 	
 	split_args = NULL;
-	nbr = 0;
 	if (argc == 1)
 		ft_error();
 	x = 1;
@@ -47,7 +46,15 @@ void	check_argc(int argc, char **argv)
 	{
 		split_args = ft_split(argv[x], ' ');
 		if (is_empty(split_args) == 1)
+		{
+			free_array(split_args);
 			ft_error();
+		}
+		if (is_integer(split_args) == 1)
+		{
+			free_array(split_args);
+			ft_error();
+		}
 		free_array(split_args);
 		x++;
 	}

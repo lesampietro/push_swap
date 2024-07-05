@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/05 16:47:08 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/05 17:32:16 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ enum e_legible
 
 // Functions to check arguments
 int				get_size(char **args);
+int				is_integer(char **split_args);
 int				*check_args(int size, char **argv, int *int_args);
 void			check_argc(int argc, char **argv);
 void			check_ascii(char *str, int *int_args);
-void			is_integer(int size, char **argv);
 int				check_duplicates(int *int_args, int size);
 int				is_empty(char **str);
 	// static int	first_time(int status);
