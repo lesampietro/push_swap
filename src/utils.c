@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:57:55 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/06/18 15:08:27 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/04 22:27:40 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ int	ft_error(void)
 	exit(1);
 }
 
-// int	free_arr(int *arr)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (arr[i] != NULL)
-// 		free(paths[i++]);
-// 	free(arr);
-// }
+void	free_array(char **args)
+{
+	int	i;
+	
+	i = 0;
+	while (args[i])
+	{
+		free(args[i]);
+		i++;
+	}
+	free(args);
+}

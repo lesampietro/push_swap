@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/06/18 21:45:04 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/04 22:31:21 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@
 # include "../libs/ft_printf/includes/ft_printf.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
+typedef struct s_data t_data;
 typedef struct s_stack t_stack;
 
+// Doubly linked list struct
 struct s_stack
 {
-	int	*stack;
-	int	size;
+	int			data;
+	struct node	*prev;
+	struct node	*next;
+};
+
+struct s_data
+{
+	int			*stack;
+	int			size;
 };
 
 enum e_legible
@@ -33,6 +43,22 @@ enum e_legible
 	ON,
 };
 
-int	ft_error(void);
+// Functions to check arguments
+int				get_size(char **args);
+int				*check_args(int size, char **argv, int *int_args);
+void			check_ascii(char *str, int *int_args);
+void			is_integer(int size, char **argv);
+int			check_duplicates(int *int_args, int size);
+	// static int	first_time(int status);
+
+	// Functions to execute operations
+
+	// Functions to sort the stack
+
+	// Functions to display the stack
+
+	// Error and free functions
+	int ft_error(void);
+void				free_array(char **args);
 
 #endif

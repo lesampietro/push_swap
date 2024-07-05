@@ -6,12 +6,11 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:11:55 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/06/10 18:04:44 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/02 19:25:08 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_count_words(const char *s, char c)
 {

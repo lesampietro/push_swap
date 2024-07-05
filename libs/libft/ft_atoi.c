@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:54:47 by lsampiet          #+#    #+#             */
-/*   Updated: 2023/11/13 19:23:59 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/06/30 22:08:19 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	ft_issign(char c)
 int	ft_atoi(const char *nptr)
 {
 	int	res;
-	int	i;
 	int	sign;
+	int		i;
 
 	i = 0;
 	res = 0;
