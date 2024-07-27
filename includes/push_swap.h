@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/05 18:22:45 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/27 15:51:46 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+// INT_MAX = 2147483647;
+// INT_MIN = -2147483648;
 
 typedef struct s_data t_data;
 typedef struct s_stack t_stack;
@@ -51,15 +54,14 @@ int				*check_args(int size, char **argv, int *int_args);
 void			check_argc(int argc, char **argv);
 int				check_duplicates(char **split_args);
 int				is_empty(char **str);
-	// static int	first_time(int status);
 
-	// Functions to execute operations
+// Functions to execute operations
 
-	// Functions to sort the stack
+// Functions to sort the stack
 
-	// Functions to display the stack
+// Functions to display the stack
 
-	// Error and free functions
+// Error and free functions
 int				ft_arg_error(char **split_args);
 void			free_array(char **args);
 
