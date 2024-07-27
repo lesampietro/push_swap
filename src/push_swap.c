@@ -6,14 +6,13 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/27 17:19:01 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/27 18:00:45 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//dividir a main em funções para checagem de quantidade de argumentos, checagem de argumentos e execução de operações
-// colocar os números em nós da lista e checar se tem apenas um nó
+// colocar os números em nós da lista e checar se tem: apenas um nó, e se há duplicatas
 
 int	get_size(char **args)
 {
@@ -34,7 +33,7 @@ void	check_argc(int argc, char **argv)
 	i = 0;
 	split_args = NULL;
 	if (argc == 1)
-		ft_putendl_fd("Error", 2);
+		exit(EXIT_SUCCESS);
 	while (argv[++i])
 	{
 		split_args = ft_split(argv[i], ' ');
@@ -43,8 +42,6 @@ void	check_argc(int argc, char **argv)
 		if (check_ascii(split_args) == 1)
 			ft_arg_error(split_args);
 		if (is_integer(split_args) == 1)
-			ft_arg_error(split_args);
-		if (check_duplicates(split_args) == 1)
 			ft_arg_error(split_args);
 		free_array(split_args);
 	}	

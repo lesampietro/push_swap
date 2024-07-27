@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/27 17:25:31 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/27 17:53:33 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	check_ascii(char **args)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (args[i])
 	{
 		j = 0;
@@ -37,24 +36,25 @@ int	check_ascii(char **args)
 				if (!args[i][j])
 					return (1);
 			}
-			if (!ft_isdigit(args[i][j]))
+			while (ft_isdigit(args[i][j]))
+				j++;
+			if (args[i][j])
 				return (1);
-			j++;
 		}
 		i++;
 	}
 	return (0);
 }
 
-int	is_integer(char **split_args)
+int	is_integer(char **args)
 {
 	int		i;
 	long	nbr;
 
 	i = 0;
-	while (split_args[i])
+	while (args[i])
 	{
-		nbr = ft_atol(split_args[i]);
+		nbr = ft_atol(args[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			return (1);
 		i++;
