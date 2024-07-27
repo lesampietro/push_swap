@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/27 18:00:45 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/27 19:53:26 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,16 @@ void	check_argc(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	// int		*numbers;
+	t_stack	*stack_a;
 	
 	check_argc(argc, argv);
+	stack_a = create_node(42);
+	stack_a->next = create_node(2);
+	while (stack_a)
+	{
+		ft_printf("%d\n", stack_a->data);
+		stack_a = stack_a->next;
+	}
 	// numbers = transform_args(argc, argv);
 	return (0);
 }

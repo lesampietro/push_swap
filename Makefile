@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 19:54:47 by lsampiet          #+#    #+#              #
-#    Updated: 2024/06/28 17:39:02 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/07/27 19:49:31 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ HEADER_M= ./includes/push_swap.h
 LIBS= $(LIBFT)/libft.a
 SRC= push_swap.c \
 	 check_args.c \
-	 utils.c
+	 utils.c \
+	 create_stacks.c
 
 SRC:= $(addprefix $(SRC_D),$(SRC))
 

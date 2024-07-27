@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/27 17:36:21 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/07/27 19:47:46 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@ typedef struct s_stack t_stack;
 // Doubly linked list struct
 struct s_stack
 {
-	int			data;
-	struct node	*prev;
-	struct node	*next;
+	int				data;
+	int				key;
+	struct s_stack	*prev;
+	struct s_stack	*next;
 };
 
 struct s_data
 {
-	int			*stack;
-	int			size;
+	int				*stack;
+	int				size;
 };
 
 enum e_legible
@@ -47,13 +48,16 @@ enum e_legible
 };
 
 // Functions to check arguments
-int				get_size(char **args);
-int				is_integer(char **args);
-int				check_ascii(char **args);
-int				*check_args(int size, char **argv, int *int_args);
-void			check_argc(int argc, char **argv);
-int				check_duplicates(char **split_args);
-int				is_empty(char **str);
+int					get_size(char **args);
+int					is_integer(char **args);
+int					check_ascii(char **args);
+int					*check_args(int size, char **argv, int *int_args);
+void				check_argc(int argc, char **argv);
+int					check_duplicates(char **split_args);
+int					is_empty(char **str);
+
+// Functions to create stacks
+t_stack				*create_node(int data);
 
 // Functions to execute operations
 
@@ -62,7 +66,7 @@ int				is_empty(char **str);
 // Functions to display the stack
 
 // Error and free functions
-int				ft_arg_error(char **split_args);
-void			free_array(char **args);
+int					ft_arg_error(char **split_args);
+void				free_array(char **args);
 
 #endif
