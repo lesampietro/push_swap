@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/07/27 19:47:46 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/03 22:12:35 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,11 @@ int					is_integer(char **args);
 int					check_ascii(char **args);
 int					*check_args(int size, char **argv, int *int_args);
 void				check_argc(int argc, char **argv);
-int					check_duplicates(char **split_args);
+int					check_duplicates(int nbr, t_stack *stack_a);
 int					is_empty(char **str);
 
 // Functions to create stacks
+void				create_stack(t_stack **stack_a, char **argv);
 t_stack				*create_node(int data);
 
 // Functions to execute operations
@@ -66,7 +67,7 @@ t_stack				*create_node(int data);
 // Functions to display the stack
 
 // Error and free functions
-int					ft_arg_error(char **split_args);
+int					arg_error(char **split_args);
 void				free_array(char **args);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 19:54:47 by lsampiet          #+#    #+#              #
-#    Updated: 2024/07/27 19:49:31 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/08/03 21:34:01 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBS= $(LIBFT)/libft.a
 SRC= push_swap.c \
 	 check_args.c \
 	 utils.c \
-	 create_stacks.c
+	 create_stack.c
 
 SRC:= $(addprefix $(SRC_D),$(SRC))
 
