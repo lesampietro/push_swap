@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/03 22:08:07 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/04 18:23:53 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 //interpretar argvs que vierem dentro de " "
 
-t_stack	*create_node(int data)
+t_stack_node	*create_node(int data)
 {
-	t_stack	*node;
+	t_stack_node	*node;
 
-	node = malloc(sizeof(t_stack));
+	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return (NULL);
 	node->data = data;
@@ -27,19 +27,29 @@ t_stack	*create_node(int data)
 	return (node);
 }
 
-t_stack	append_node(t_stack **stack_a, int data)
+t_stack_node	*find_last_node(t_stack_node *stack_a)
 {
-	t_stack	*node;
-	t_stack	*last_node;
+	if (!stack_a)
+		return (NULL);
+	while (stack_a->next != NULL)
+		stack_a = stack_a->next;
+	return (stack_a);
+}
+
+t_stack_node	*append_node(t_stack_node **stack_a, int data)
+{
+	t_stack_node	*node;
+	t_stack_node	*last_node;
 	
+	if(!stack_a)
+		return (NULL);
 	node = create_node(data);
 	if (!node)
-		stack_error(stack_a);
-	if (*stack_a == NULL)
+		return (NULL);
+	//stack_error(stack_a);
+	if (!(*stack_a))
 	{
 		*stack_a = node;
-		if (!*stack_a)
-			stack_error(stack_a);
 		node->prev = NULL;
 	}
 	else
@@ -48,9 +58,10 @@ t_stack	append_node(t_stack **stack_a, int data)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+	return (node);
 }
 
-void	create_stack(t_stack **stack_a, char **argv)
+void	create_stack(t_stack_node **stack_a, char **argv)
 {
 	int nbr;
 
@@ -58,7 +69,11 @@ void	create_stack(t_stack **stack_a, char **argv)
 	{
 		nbr = ft_atoi(*argv);
 		if (check_duplicates(nbr, *stack_a) == 1)
-			stack_error(stack_a);
+		{
+			ft_putstr_fd("Error\n", 2);
+			free(*stack_a);
+			exit (1);
+		}
 		append_node(stack_a, nbr);
 		argv++;
 	}

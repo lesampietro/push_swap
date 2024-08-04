@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/03 21:51:43 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/04 14:03:27 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_integer(char **args)
 	return (0);
 }
 
-int check_duplicates(int nbr, t_stack *stack_a)
+int check_duplicates(int nbr, t_stack_node *stack_a)
 {
 	if (stack_a == NULL)
 		return (0);

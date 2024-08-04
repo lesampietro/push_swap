@@ -6,13 +6,11 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/03 21:36:02 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/04 18:22:57 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-// colocar os números em nós da lista e checar se tem: apenas um nó, e se há duplicatas
 
 int	get_size(char **args)
 {
@@ -50,8 +48,8 @@ void	check_argc(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack_node *stack_a;
+	t_stack_node *stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -59,7 +57,7 @@ int	main(int argc, char **argv)
 	create_stack(&stack_a, argv + 1);
 	return (0);
 }
-	// t_stack	*last_node;
+	// t_stack_node	*last_node;
 	
 	// stack_a = create_node(42);
 	// stack_a->next = create_node(2);
