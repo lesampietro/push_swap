@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/04 16:54:31 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/04 20:30:30 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ enum e_legible
 int						get_size(char **args);
 int						is_integer(char **args);
 int						check_ascii(char **args);
-int						*check_args(int size, char **argv, int *int_args);
-void					check_argc(int argc, char **argv);
+char					**check_args(int argc, char **argv);
 int						check_duplicates(int nbr, t_stack_node *stack_a);
 int						is_empty(char **str);
 
@@ -67,6 +66,7 @@ t_stack_node			*create_node(int data);
 // Functions to display the stack
 
 // Error and free functions
+int						error(void);
 int						arg_error(char **split_args);
 void					free_array(char **args);
 void					stack_error(t_stack_node *stack_a);

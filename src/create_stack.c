@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/04 18:23:53 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/04 19:58:20 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ t_stack_node	*append_node(t_stack_node **stack_a, int data)
 	node = create_node(data);
 	if (!node)
 		return (NULL);
-	//stack_error(stack_a);
 	if (!(*stack_a))
 	{
 		*stack_a = node;
