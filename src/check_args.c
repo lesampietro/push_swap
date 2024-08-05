@@ -6,16 +6,23 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/04 14:03:27 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/05 18:55:42 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int is_empty(char **str)
+int 	is_empty(char **str)
 {
-	if (!*str)
-		return (1);
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i][0] == '\0')
+			return (1);
+		i++;
+	}
 	return (0);
 }
 

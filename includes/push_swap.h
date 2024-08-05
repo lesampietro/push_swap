@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/05 18:29:26 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/05 18:35:38 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int						check_duplicates(int nbr, t_stack_node *stack_a);
 int						is_empty(char **str);
 
 // Functions to create stacks
-void					create_stack(t_stack_node **stack_a, char **argv);
+void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
 
 // Functions to execute operations
