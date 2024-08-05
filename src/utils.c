@@ -6,17 +6,11 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:57:55 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/04 20:31:15 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/05 18:27:36 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
-}
 
 int	arg_error(char **split_args)
 {
@@ -38,14 +32,14 @@ void	free_array(char **args)
 	free(args);
 }
 
-// void	stack_error(t_stack_node **stack_a)
-// {
-// 	ft_putstr_fd("Error\n", 2);
-// 	while (*stack_a)
-// 	{
-// 		free(stack_a);
-// 		*stack_a = *(stack_a)->next;
-// 	}
-// 	stack_a = NULL;
-// 	exit(1);
-// }
+void	free_stack(t_stack_node *stack_a)
+{
+	while (stack_a)
+	{
+		if (!stack_a->next)
+			break;
+		stack_a = stack_a->next;
+		free(stack_a->prev);
+	}
+	free(stack_a);
+}
