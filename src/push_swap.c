@@ -6,20 +6,21 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/05 18:43:37 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:41:44 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	get_size(char **args)
+int	get_stack_size(t_stack_node *stack_a, t_data *data)
 {
-	int	i;
-
-	i = 0;
-	while (args[i])
-		i++;
-	return (i);
+	data->size = 1;
+	while (stack_a->next != NULL)
+	{
+		stack_a = stack_a->next;
+		data->size++;
+	}
+	return (data->size);
 }
 
 char	**check_args(int argc, char **argv, t_data *data)
@@ -62,6 +63,7 @@ int	main(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 	new_argv = check_args(argc, argv, &data);
 	create_stack(&stack_a, new_argv, &data);
+	get_stack_size(stack_a, &data);
 	if (data.split == true)
 		free_array(new_argv);
 	free_stack(stack_a);

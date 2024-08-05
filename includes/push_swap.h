@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/05 18:35:38 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:39:49 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ struct s_stack_node
 struct s_data
 {
 	bool				split;
+	int					size;
 };
 
 enum e_legible
@@ -57,6 +58,7 @@ int						is_empty(char **str);
 // Functions to create stacks
 void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
+int						get_stack_size(t_stack_node *stack_a, t_data *data);
 
 // Functions to execute operations
 
