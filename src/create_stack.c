@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/05 19:35:08 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/07 22:08:08 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack_node	*create_node(int data)
 	if (!node)
 		return (NULL);
 	node->data = data;
+	node->head = NULL;
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
@@ -47,7 +48,7 @@ t_stack_node	*append_node(t_stack_node **stack_a, int data)
 	if (!(*stack_a))
 	{
 		*stack_a = node;
-		node->prev = NULL;
+		node->head = node; // head é o primero nó da lista
 	}
 	else
 	{

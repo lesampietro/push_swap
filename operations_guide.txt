@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/05 19:54:42 by lsampiet          #+#    #+#             */
+/*   Updated: 2024/08/05 20:16:05 by lsampiet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+// Run the following command "$>./push_swap 42".
+// The program should display nothing(0 instruction)
+
+// Run the following command "$>./push_swap 2 3".
+// The program should display nothing(0 instruction)
+
+// Run the following command "$>./push_swap 0 1 2 3".
+// The program should display nothing(0 instruction)
+
+// Run the following command "$>./push_swap 0 1 2 3 4 5 6 7 8 9 ".
+// The program should display nothing (0 instruction).
+
+// Run the following command "$>./push_swap 'Between 0 and 9 randomly sorted values chosen. The program should display nothing (0 instruction).
+
+// --------------------------------------------------------------------------//
+
+// PSEUDO CODE
+// sa - swap a - swap the first 2 elements at the top of stack a.
+// Trocar o valor dos dois primeiros elementos da pilha a.
+// Copiar o valor do primeiro nó da pilha 'a' em uma variável temporária. Atribuir o valor do segundo nó ao primeiro nó. Atribuir o valor da variável temporária ao segundo nó.
+
+// sb - swap b - swap the first 2 elements at the top of stack b.
+// Trocar o valor dos dois primeiros elementos da pilha b.
+// Copiar o valor do primeiro nó da pilha 'a' em uma variável temporária. Atribuir o valor do segundo nó ao primeiro nó. Atribuir o valor da variável temporária ao segundo nó.
+
+// ss - sa and sb at the same time.
+// Executar os comandos sa e sb simultaneamente.
+
+// pa - push a - take the first element at the top of b and put it at the top of a.
+// Deletar o primeiro nó da pilha 'b' e adicioná-lo no topo da pilha 'a'.
+
+// pb - push b - take the first element at the top of 'a' and put it at the top of 'b'.
+// Deletar o primeiro nó da pilha 'a' e adicioná-lo no topo da pilha 'b'.
+
+// ra - rotate a - shift up all elements of stack a by 1. The first element becomes the last one.
+// Rotacionar todos os elementos da pilha 'a' para cima por 1. O primeiro elemento se torna o último.
+
+// rb - rotate b - shift up all elements of stack b by 1. The first element becomes the last one.
+// Rotacionar todos os elementos da pilha 'b' para cima por 1. O primeiro elemento se torna o último.
+
+//rr - ra and rb at the same time.
+// Executar os comandos ra e rb simultaneamente.
+
+// rra - reverse rotate a - shift down all elements of stack a by 1. The last element becomes the first one.
+// Rotacionar todos os elementos da pilha 'a' para baixo por 1. O último elemento se torna o primeiro.
+
+// rrb - reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.
+// Rotacionar todos os elementos da pilha 'b' para baixo por 1. O último elemento se torna o primeiro.
+
+// rrr - rra and rrb at the same time.
+// Executar os comandos rra e rrb simultaneamente.

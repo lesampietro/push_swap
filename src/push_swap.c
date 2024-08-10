@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/05 19:41:44 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/09 21:55:30 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ int	main(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 	new_argv = check_args(argc, argv, &data);
 	create_stack(&stack_a, new_argv, &data);
+	sa(&stack_a);
 	get_stack_size(stack_a, &data);
+	// sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);
 	free_stack(stack_a);
