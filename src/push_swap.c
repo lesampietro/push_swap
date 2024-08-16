@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/13 16:46:20 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/16 17:47:44 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ int	main(int argc, char **argv)
 	// 	sort_five(&stack_a, &stack_b);
 	// else
 	// 	sort(&stack_a, &stack_b);
-	sa(&stack_a);
+	// sa(&stack_a);
+	rra(&stack_a);
 	// sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);

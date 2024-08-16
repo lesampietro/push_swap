@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/07 22:08:08 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/16 17:07:26 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ t_stack_node	*create_node(int data)
 	return (node);
 }
 
-t_stack_node	*find_last_node(t_stack_node *stack_a)
+t_stack_node	*find_last_node(t_stack_node *stack)
 {
-	if (!stack_a)
+	if (!stack)
 		return (NULL);
-	while (stack_a->next != NULL)
-		stack_a = stack_a->next;
-	return (stack_a);
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
 
 t_stack_node	*append_node(t_stack_node **stack_a, int data)

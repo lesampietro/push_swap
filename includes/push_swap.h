@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/13 19:37:38 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/16 17:35:45 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,24 @@ void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
 int						get_stack_size(t_stack_node **stack_a);
 
+// Functions to find nodes
+t_stack_node *find_last_node(t_stack_node *stack_a);
+
 // Functions to execute operations
 void					sa(t_stack_node **stack_a);
 void					sb(t_stack_node **stack_b);
 void					ss(t_stack_node **stack_a, t_stack_node **stack_b);
+void					ra(t_stack_node **stack_a);
+void					rb(t_stack_node **stack_a);
+void					rr(t_stack_node **stack_a, t_stack_node **stack_b);
+void					rra(t_stack_node **stack_a);
+void					rrb(t_stack_node **stack_a);
+void					rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 
-	// Functions to sort the stack
+// Functions to display the stack
 
-	// Functions to display the stack
-
-	// Error and free functions
-	int arg_error(char **split_args);
+// Error and free functions
+int arg_error(char **split_args);
 void					free_array(char **args);
 void					free_stack(t_stack_node *stack_a);
 
