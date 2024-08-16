@@ -6,21 +6,25 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/09 21:55:30 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/13 16:46:20 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	get_stack_size(t_stack_node *stack_a, t_data *data)
+int	get_stack_size(t_stack_node **stack_a)
 {
-	data->size = 1;
-	while (stack_a->next != NULL)
+	t_stack_node	*tmp;
+	int				size;
+
+	size = 0;
+	tmp = *stack_a;
+	while (tmp != NULL)
 	{
-		stack_a = stack_a->next;
-		data->size++;
+		tmp = (*tmp).next;
+		size++;
 	}
-	return (data->size);
+	return (size);
 }
 
 char	**check_args(int argc, char **argv, t_data *data)
@@ -63,8 +67,13 @@ int	main(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 	new_argv = check_args(argc, argv, &data);
 	create_stack(&stack_a, new_argv, &data);
+	// if(get_stack_size(&stack_a) == 3)
+	// 	sort_three(&stack_a);
+	// else if(get_stack_size(&stack_a) == 5)
+	// 	sort_five(&stack_a, &stack_b);
+	// else
+	// 	sort(&stack_a, &stack_b);
 	sa(&stack_a);
-	get_stack_size(stack_a, &data);
 	// sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);

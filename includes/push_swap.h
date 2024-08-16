@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/10 17:36:14 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/13 19:37:38 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ struct s_data
 struct s_stack_node
 {
 	int					data;
-	int					index;
 	struct s_stack_node	*head;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
@@ -48,11 +47,9 @@ int						is_empty(char **str);
 // Functions to create stacks
 void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
-int						get_stack_size(t_stack_node *stack_a, t_data *data);
+int						get_stack_size(t_stack_node **stack_a);
 
 // Functions to execute operations
-static void				swap(t_stack_node **stack_a);
-//static functions are only visible inside the file they are declared - for performance optimization purposes
 void					sa(t_stack_node **stack_a);
 void					sb(t_stack_node **stack_b);
 void					ss(t_stack_node **stack_a, t_stack_node **stack_b);

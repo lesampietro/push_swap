@@ -6,43 +6,28 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:08:16 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/10 17:53:50 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:50:37 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// static void	swap(t_stack_node **stack) //swaping node's values
-// {
-// 	int				tmp_value;
-// 	t_stack_node	*tmp_node;
-
-// 	if (!(*stack) || !(*stack)->next)
-// 		return ;
-// 	tmp_value = (*stack)->data;
-// 	(*stack)->data = (*stack)->next->data;
-// 	(*stack)->next->data = tmp_value;
-// 	tmp_node = *stack;
-// 	while (tmp_node != NULL)
-// 	{
-// 		ft_printf("tmp_node->data: %d\n", tmp_node->data);
-// 		tmp_node = tmp_node->next;
-// 	}
-// }
-
-static void	swap(t_stack_node **stack) //swaping node's positions
+//static functions are only visible inside the file they are declared - for performance optimization purposes
+static void	swap(t_stack_node **stack)
 {
-	t_stack_node	*head_node;
-
-	if (!(*stack) || !(*stack)->next)
+	int				stack_len;
+	
+	stack_len = get_stack_size(stack);
+	if (!(*stack) || stack_len == 1)
 		return ;
-	head_node = *stack;
-	*stack = (*stack)->next;
-	// while (tmp_node != NULL)
-	// {
-	// 	ft_printf("tmp_node->data: %d\n", tmp_node->data);
-	// 	tmp_node = tmp_node->next;
-	// }
+	*stack = (*stack)->next; //moving the stack pointer to the second node
+	((*stack)->prev)->prev = *stack; //making first node *prev pointer point to new stack position, which points to the second node
+	(*stack)->prev->next = (*stack)->next; //making first node *next pointer point to stack's next, which is the third node
+	if((*stack)->next) // if there's a third node, we have to manage it's *prev
+		(*stack)->next->prev = (*stack)->prev; //third node's *prev was still pointing to the second node. here we make it point to the first node (which is now inbetween the first and the third node)
+	(*stack)->next = (*stack)->prev; // making the seconde node's *next point to the first node (the pointer will receive the former *prev pointer value)
+	(*stack)->prev = NULL;
+	(*stack)->head = *stack;
 }
 
 void	sa(t_stack_node **stack_a)
