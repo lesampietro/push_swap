@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 16:55:52 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 18:12:39 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	get_stack_size(t_stack_node **stack_a)
 		tmp = (*tmp).next;
 		size++;
 	}
-	return (size);
+	return(size);
 }
 
 char	**check_args(int argc, char **argv, t_data *data)
@@ -56,36 +56,44 @@ char	**check_args(int argc, char **argv, t_data *data)
 
 int	main(int argc, char **argv)
 {
-	t_stack_node *stack_a;
-	t_stack_node *stack_b;
-	t_data data;
-	char **new_argv;
+	t_stack_node	*stack_a;
+	t_stack_node	*stack_b;
+	t_stack_node	*tmp_a; // tirar
+	t_stack_node	*tmp_b; // tirar
+	t_data			data;
+	char			**new_argv;
 
 	stack_a = NULL;
-	// stack_b = NULL;
-	stack_b = malloc(sizeof(t_stack_node));
-	stack_b->next = malloc(sizeof(t_stack_node));
-	stack_b->next->next = malloc(sizeof(t_stack_node));
-	stack_b->data = 42;
-	stack_b->next->data = 21;
-	stack_b->next->next->data = -31;
-	stack_b->head = stack_b;
+	stack_b = NULL;
 	if (argc == 1)
 		exit(EXIT_SUCCESS);
 	new_argv = check_args(argc, argv, &data);
-	create_stack(&stack_a, new_argv, &data);
-	// if(get_stack_size(&stack_a) == 3)
-	// 	sort_three(&stack_a);
+	create_stack(&stack_a, new_argv, &data);	
+	if(get_stack_size(&stack_a) == 3)
+		sort_three(&stack_a);
 	// else if(get_stack_size(&stack_a) == 5)
 	// 	sort_five(&stack_a, &stack_b);
 	// else
 	// 	sort(&stack_a, &stack_b);
-	// sa(&stack_a);
-	pb(&stack_a, &stack_b);
-	// pb(&stack_a, &stack_b);
+
+	tmp_a = stack_a;
+	tmp_b = stack_b;
+	int i = 0;
+	while (tmp_a != NULL)
+	{
+		ft_printf("tmp_a 0%i: %d\n", i++, tmp_a->data);
+		tmp_a = tmp_a->next;
+	}
+	i = 0;
+	while (tmp_b != NULL)
+	{
+		ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
+		tmp_b = tmp_b->next;
+	}
 	// sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);
 	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

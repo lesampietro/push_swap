@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:33:36 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/16 17:49:43 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:56:18 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rev_rotate(t_stack_node **stack)
 
 	stack_len = get_stack_size(stack);
 	last_node = find_last_node(*stack);
-	if (!(*stack) || stack_len == 2)
+	if (!(*stack) || !last_node->prev || stack_len == 2)
 		return;
 	last_node->prev->next = NULL;
 	last_node->next = *stack;

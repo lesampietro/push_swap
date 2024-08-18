@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 19:54:47 by lsampiet          #+#    #+#              #
-#    Updated: 2024/08/17 20:47:54 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/08/18 18:14:05 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC= push_swap.c \
 	 rotate.c \
 	 reverse_rotate.c \
 	 push.c \
+	 sort_three.c
 
 SRC:= $(addprefix $(SRC_D),$(SRC))
 

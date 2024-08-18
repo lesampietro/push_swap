@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:32:44 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 16:56:26 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:34:03 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static void	push(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
 	t_stack_node	*node_to_push;
 
+	if (!(*src_stack) || !(*src_stack)->next)
+		return ;
 	node_to_push = *src_stack;
 	*src_stack = (*src_stack)->next;
 	(*src_stack)->prev = NULL;

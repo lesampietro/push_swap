@@ -1,45 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 19:57:55 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 17:18:14 by lsampiet         ###   ########.fr       */
+/*   Created: 2024/08/18 18:14:08 by lsampiet          #+#    #+#             */
+/*   Updated: 2024/08/18 18:14:09 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-int	arg_error(char **split_args)
-{
-	ft_putstr_fd("Error\n", 2);
-	free_array(split_args);
-	exit(1);
-}
-
-void	free_array(char **args)
-{
-	int	i;
-	
-	i = 0;
-	while (args[i])
-	{
-		free(args[i]);
-		i++;
-	}
-	free(args);
-}
-
-void	free_stack(t_stack_node *stack)
-{
-	while (stack)
-	{
-		if (!stack->next)
-			break;
-		stack = stack->next;
-		free(stack->prev);
-	}
-	free(stack);
-}
