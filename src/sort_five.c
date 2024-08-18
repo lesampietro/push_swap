@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 18:14:08 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 20:51:17 by lsampiet         ###   ########.fr       */
+/*   Created: 2024/08/18 20:53:42 by lsampiet          #+#    #+#             */
+/*   Updated: 2024/08/18 20:54:50 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_three(t_stack_node **stack)
+void	sort_five(t_stack_node **stack)
 {
-	int	first;
-	int second;
-	int third;
-
-	first = (*stack)->data;
-	second = (*stack)->next->data;
-	third = (*stack)->next->next->data;
-	if(first < second && second < third)
-		return;
-	if(first < second && second > third)
-		rra(stack);
-	if(first > second && second > third)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	if (first > second && second < third)
-		sa(stack);
-	return;
+	
 }
