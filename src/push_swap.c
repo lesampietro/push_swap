@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/16 17:47:44 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 16:55:52 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,14 @@ int	main(int argc, char **argv)
 	char **new_argv;
 
 	stack_a = NULL;
-	stack_b = NULL;
+	// stack_b = NULL;
+	stack_b = malloc(sizeof(t_stack_node));
+	stack_b->next = malloc(sizeof(t_stack_node));
+	stack_b->next->next = malloc(sizeof(t_stack_node));
+	stack_b->data = 42;
+	stack_b->next->data = 21;
+	stack_b->next->next->data = -31;
+	stack_b->head = stack_b;
 	if (argc == 1)
 		exit(EXIT_SUCCESS);
 	new_argv = check_args(argc, argv, &data);
@@ -74,7 +81,8 @@ int	main(int argc, char **argv)
 	// else
 	// 	sort(&stack_a, &stack_b);
 	// sa(&stack_a);
-	rra(&stack_a);
+	pb(&stack_a, &stack_b);
+	// pb(&stack_a, &stack_b);
 	// sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);

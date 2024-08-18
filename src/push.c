@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:32:44 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/11 18:31:49 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 16:56:26 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 static void	push(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
 	t_stack_node	*node_to_push;
-	
+
 	node_to_push = *src_stack;
-	*src_stack = (*src_stack)->next; // make it point to the next node
-	if(*src_stack) // make its prev pointer point to NULL turning it head node
-		(*src_stack)->prev = NULL;
-	if(*dest_stack == NULL) // if the destination stack is empty
+	*src_stack = (*src_stack)->next;
+	(*src_stack)->prev = NULL;
+	if(!(*dest_stack))
 	{
-		*dest_stack = node_to_push; // make the destination stack point to the node_to_push
-		node_to_push->prev = NULL; // make the node_to_push same as head node
+		*dest_stack = node_to_push;
+		node_to_push->prev = NULL;
 		node_to_push->next = NULL;
 	}
 	else
 	{
-		node_to_push->next = *dest_stack; // make the node_to_push next pointer point to the destination stack
-		node_to_push->next->prev = node_to_push;
-		*dest_stack = node_to_push; //
+		( *dest_stack)->prev = node_to_push;
+		node_to_push->next = *dest_stack;
+		*dest_stack = node_to_push;
 	}
-
+	(*src_stack)->head = *src_stack;
+	(*dest_stack)->head = *dest_stack;
 }
 
-void	pa(t_stack_node **stack_a, t_stack_node **stack_b)
+void	pa(t_stack_node **stack_b, t_stack_node **stack_a)
 {
 	push(stack_b, stack_a);
 }

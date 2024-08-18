@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/16 17:35:45 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/17 22:25:17 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,13 @@ void					rr(t_stack_node **stack_a, t_stack_node **stack_b);
 void					rra(t_stack_node **stack_a);
 void					rrb(t_stack_node **stack_a);
 void					rrr(t_stack_node **stack_a, t_stack_node **stack_b);
+void					pa(t_stack_node **stack_a, t_stack_node **stack_b);
+void					pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // Functions to display the stack
 
 // Error and free functions
-int arg_error(char **split_args);
+int						arg_error(char **split_args);
 void					free_array(char **args);
 void					free_stack(t_stack_node *stack_a);
 
