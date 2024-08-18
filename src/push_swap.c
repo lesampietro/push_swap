@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 18:12:39 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 20:42:13 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	t_stack_node	*stack_a;
 	t_stack_node	*stack_b;
 	t_stack_node	*tmp_a; // tirar
-	t_stack_node	*tmp_b; // tirar
+	// t_stack_node	*tmp_b; // tirar
 	t_data			data;
 	char			**new_argv;
 
@@ -77,20 +77,20 @@ int	main(int argc, char **argv)
 	// 	sort(&stack_a, &stack_b);
 
 	tmp_a = stack_a;
-	tmp_b = stack_b;
+	// tmp_b = stack_b;
 	int i = 0;
 	while (tmp_a != NULL)
 	{
 		ft_printf("tmp_a 0%i: %d\n", i++, tmp_a->data);
 		tmp_a = tmp_a->next;
 	}
-	i = 0;
-	while (tmp_b != NULL)
-	{
-		ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
-		tmp_b = tmp_b->next;
-	}
-	// sort(&a, &b);
+	// i = 0;
+	// while (tmp_b != NULL)
+	// {
+	// 	ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
+	// 	tmp_b = tmp_b->next;
+	// }
+	// // sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);
 	free_stack(stack_a);

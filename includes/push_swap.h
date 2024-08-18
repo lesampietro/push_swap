@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 18:12:36 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/18 20:41:16 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ void					rrb(t_stack_node **stack_a);
 void					rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 void					pa(t_stack_node **stack_a, t_stack_node **stack_b);
 void					pb(t_stack_node **stack_a, t_stack_node **stack_b);
+
+// Functions to sort the stack
+void	sort_three(t_stack_node **stack);
 
 // Functions to display the stack
 
