@@ -6,21 +6,36 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:32:44 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 17:34:03 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:30:05 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+static void	manage_src(t_stack_node **src_stack)
+{
+	int stack_len;
+
+	stack_len = get_stack_size(src_stack);
+	if (stack_len == 1)
+		*src_stack = NULL;
+	if (stack_len > 1)
+	{
+		*src_stack = (*src_stack)->next;
+		(*src_stack)->prev = NULL;
+		(*src_stack)->head = *src_stack;
+	}
+	return;
+}
+
 static void	push(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
 	t_stack_node	*node_to_push;
 
-	if (!(*src_stack) || !(*src_stack)->next)
-		return ;
+	if (!(*src_stack))
+		return;
 	node_to_push = *src_stack;
-	*src_stack = (*src_stack)->next;
-	(*src_stack)->prev = NULL;
+	manage_src(src_stack);
 	if(!(*dest_stack))
 	{
 		*dest_stack = node_to_push;
@@ -33,16 +48,15 @@ static void	push(t_stack_node **src_stack, t_stack_node **dest_stack)
 		node_to_push->next = *dest_stack;
 		*dest_stack = node_to_push;
 	}
-	(*src_stack)->head = *src_stack;
 	(*dest_stack)->head = *dest_stack;
 }
 
-void	pa(t_stack_node **stack_b, t_stack_node **stack_a)
+void	pa(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
-	push(stack_b, stack_a);
+	push(src_stack, dest_stack);
 }
 
-void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
+void	pb(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
-	push(stack_a, stack_b);
+	push(src_stack, dest_stack);
 }

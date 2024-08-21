@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 20:41:16 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/21 17:19:46 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ struct s_stack_node
 	struct s_stack_node	*next;
 };
 
+enum e_node_level
+{
+						TOP = 0,
+						MIDDLE = 1,
+						BOTTOM = 2,
+};
+
 // Functions to check arguments
 int						get_size(char **args);
 int						is_integer(char **args);
@@ -62,11 +69,13 @@ void					rr(t_stack_node **stack_a, t_stack_node **stack_b);
 void					rra(t_stack_node **stack_a);
 void					rrb(t_stack_node **stack_a);
 void					rrr(t_stack_node **stack_a, t_stack_node **stack_b);
-void					pa(t_stack_node **stack_a, t_stack_node **stack_b);
-void					pb(t_stack_node **stack_a, t_stack_node **stack_b);
+void					pa(t_stack_node **src_stack, t_stack_node **dest_stack);
+void					pb(t_stack_node **src_stack, t_stack_node **dest_stack);
 
 // Functions to sort the stack
-void	sort_three(t_stack_node **stack);
+void					sort_three(t_stack_node **stack_a, t_stack_node **stack_b);
+int						sort_first(int first, int second, int third);
+void					sort_five(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // Functions to display the stack
 

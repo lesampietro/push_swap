@@ -6,19 +6,19 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 20:42:13 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:06:14 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	get_stack_size(t_stack_node **stack_a)
+int	get_stack_size(t_stack_node **stack)
 {
 	t_stack_node	*tmp;
 	int				size;
 
 	size = 0;
-	tmp = *stack_a;
+	tmp = *stack;
 	while (tmp != NULL)
 	{
 		tmp = (*tmp).next;
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	t_stack_node	*stack_a;
 	t_stack_node	*stack_b;
 	t_stack_node	*tmp_a; // tirar
-	// t_stack_node	*tmp_b; // tirar
+	t_stack_node	*tmp_b; // tirar
 	t_data			data;
 	char			**new_argv;
 
@@ -70,27 +70,27 @@ int	main(int argc, char **argv)
 	new_argv = check_args(argc, argv, &data);
 	create_stack(&stack_a, new_argv, &data);	
 	if(get_stack_size(&stack_a) == 3)
-		sort_three(&stack_a);
-	// else if(get_stack_size(&stack_a) == 5)
+		sort_three(&stack_a, &stack_b);
+	// if(get_stack_size(&stack_a) == 5)
 	// 	sort_five(&stack_a, &stack_b);
 	// else
 	// 	sort(&stack_a, &stack_b);
 
 	tmp_a = stack_a;
-	// tmp_b = stack_b;
+	tmp_b = stack_b;
 	int i = 0;
 	while (tmp_a != NULL)
 	{
 		ft_printf("tmp_a 0%i: %d\n", i++, tmp_a->data);
 		tmp_a = tmp_a->next;
 	}
-	// i = 0;
-	// while (tmp_b != NULL)
-	// {
-	// 	ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
-	// 	tmp_b = tmp_b->next;
-	// }
-	// // sort(&a, &b);
+	i = 0;
+	while (tmp_b != NULL)
+	{
+		ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
+		tmp_b = tmp_b->next;
+	}
+	// sort(&a, &b);
 	if (data.split == true)
 		free_array(new_argv);
 	free_stack(stack_a);
