@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/21 17:19:46 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:27:02 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ struct s_stack_node
 enum e_node_level
 {
 						TOP = 0,
-						MIDDLE = 1,
-						BOTTOM = 2,
+						MIDDLE_01 = 1,
+						MIDDLE_02 = 2,
+						BOTTOM_01 = 3,
+						BOTTOM_02 = 4,
 };
 
 // Functions to check arguments
@@ -73,8 +75,8 @@ void					pa(t_stack_node **src_stack, t_stack_node **dest_stack);
 void					pb(t_stack_node **src_stack, t_stack_node **dest_stack);
 
 // Functions to sort the stack
-void					sort_three(t_stack_node **stack_a, t_stack_node **stack_b);
-int						sort_first(int first, int second, int third);
+void					sort_three(t_stack_node **stack_a);
+int						sort_first(t_stack_node **stack_a);
 void					sort_five(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // Functions to display the stack
