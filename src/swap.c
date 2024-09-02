@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:08:16 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/16 16:50:37 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:57:07 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,18 @@ static void	swap(t_stack_node **stack)
 void	sa(t_stack_node **stack_a)
 {
 	swap(stack_a);
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack_node **stack_b)
 {
 	swap(stack_b);
+	ft_printf("sb\n");
 }
 
 void	ss(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
+	ft_printf("ss\n");
 }

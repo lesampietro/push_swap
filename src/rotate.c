@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:32:52 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 17:52:18 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:54:06 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ static void	rotate(t_stack_node **stack)
 void	ra(t_stack_node **stack_a)
 {
 	rotate(stack_a);
+	ft_printf("ra\n");
 }
 
 void	rb(t_stack_node **stack_b)
 {
 	rotate(stack_b);
+	ft_printf("rb\n");
 }
 
 void rr(t_stack_node **stack_a, t_stack_node **stack_b)
@@ -45,4 +47,5 @@ void rr(t_stack_node **stack_a, t_stack_node **stack_b)
 		return;
 	rotate(stack_a);
 	rotate(stack_b);
+	ft_printf("rr\n");
 }

@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:32:44 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/21 18:30:05 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:54:56 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,11 @@ static void	push(t_stack_node **src_stack, t_stack_node **dest_stack)
 void	pa(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
 	push(src_stack, dest_stack);
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack_node **src_stack, t_stack_node **dest_stack)
 {
 	push(src_stack, dest_stack);
+	ft_printf("pb\n");
 }
