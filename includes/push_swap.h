@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/02 17:27:02 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:53:14 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ typedef struct s_stack_node t_stack_node;
 struct s_data
 {
 	bool				split;
-	int					size;
 };
 
 // Doubly linked list struct
 struct s_stack_node
 {
 	int					data;
+	int					size;
 	struct s_stack_node	*head;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
@@ -52,11 +52,12 @@ int						check_ascii(char **args);
 char					**check_args(int argc, char **argv, t_data *data);
 int						check_duplicates(int nbr, t_stack_node *stack_a);
 int						is_empty(char **str);
+int						is_sorted(t_stack_node **stack);
 
 // Functions to create stacks
 void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
-int						get_stack_size(t_stack_node **stack_a);
+void					get_stack_size(t_stack_node **stack);
 
 // Functions to find nodes
 t_stack_node *find_last_node(t_stack_node *stack_a);
