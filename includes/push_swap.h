@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/04 15:18:38 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:37:02 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
 void					get_stack_size(t_stack_node **stack);
 
-// Functions to find nodes
-t_stack_node *find_last_node(t_stack_node *stack_a);
+// Functions to find nodes with specific positions or values
+t_stack_node			*find_last_node(t_stack_node *stack_a);
+t_stack_node			*find_smallest(t_stack_node **stack);
+void					set_index(t_stack_node **stack);
 
 // Functions to execute operations
 void					sa(t_stack_node **stack_a);
@@ -80,8 +82,6 @@ void					pb(t_stack_node **src_stack, t_stack_node **dest_stack);
 void					sort_three(t_stack_node **stack_a);
 int						sort_first(t_stack_node **stack_a);
 void					sort_five(t_stack_node **stack_a, t_stack_node **stack_b);
-
-// Functions to display the stack
 
 // Error and free functions
 int						arg_error(char **split_args);
