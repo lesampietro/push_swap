@@ -6,42 +6,11 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/04 17:54:15 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:33:53 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-//checa se há um número menor em algum dos nós da lista, com um endereço de target passado a partir da função de chamada
-t_stack_node	*find_smallest(t_stack_node **stack)
-{
-	t_stack_node	*tmp;
-	t_stack_node	*target;
-
-	tmp = *stack;
-	target = NULL;
-	while (tmp != NULL)
-	{
-		if ((target == NULL || target->data > tmp->data) && tmp->index == -1)
-			target = tmp;
-		tmp = tmp->next;
-	}
-	return (target);
-}
-
-void	set_index(t_stack_node **stack)
-{
-	t_stack_node	*min_node;
-	int				i;
-
-	i = 0;
-	while (i < (*stack)->size)
-	{
-		min_node = find_smallest(stack);
-		min_node->index = i;
-		i++;
-	}
-}
 
 int	is_sorted(t_stack_node **stack)
 {
@@ -90,18 +59,18 @@ int	main(int argc, char **argv)
 	new_argv = check_args(argc, argv, &data);
 	create_stack(&stack_a, new_argv, &data);
 	get_stack_size(&stack_a);
+	set_index(&stack_a);
 	if (!(is_sorted(&stack_a)))
 	{	
 		if (stack_a->size == 2)
 			sa(&stack_a);
 		if (stack_a->size == 3)
 			sort_three(&stack_a);
-		// if (stack_a->size == 4 || stack_a->size == 5)
-		// 	sort_five(&stack_a, &stack_b);
+		if (stack_a->size == 4 || stack_a->size == 5)
+			sort_five(&stack_a, &stack_b);
 	// else
 	// 	sort(&stack_a, &stack_b);
 	}
-	set_index(&stack_a);
 	tmp_a = stack_a;
 	tmp_b = stack_b;
 	int i = 0;
