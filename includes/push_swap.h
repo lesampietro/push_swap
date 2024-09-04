@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/02 17:53:14 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:18:38 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ struct s_stack_node
 {
 	int					data;
 	int					size;
+	int					index;
 	struct s_stack_node	*head;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;

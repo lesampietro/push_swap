@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/02 16:26:59 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:27:25 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_empty(char **str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i][0] == '\0')
 			return (1);
@@ -32,7 +32,7 @@ int	check_ascii(char **args)
 	int	j;
 
 	i = 0;
-	while(args[i])
+	while (args[i])
 	{
 		j = 0;
 		while (args[i][j])
@@ -59,7 +59,7 @@ int	is_integer(char **args)
 	long	nbr;
 
 	i = 0;
-	while(args[i])
+	while (args[i])
 	{
 		nbr = ft_atol(args[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
@@ -71,9 +71,9 @@ int	is_integer(char **args)
 
 int	check_duplicates(int nbr, t_stack_node *stack_a)
 {
-	if(stack_a == NULL)
+	if (stack_a == NULL)
 		return (0);
-	while(stack_a)
+	while (stack_a)
 	{
 		if (stack_a->data == nbr)
 			return (1);

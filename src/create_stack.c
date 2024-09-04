@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/16 17:07:26 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:18:54 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack_node	*create_node(int data)
 	if (!node)
 		return (NULL);
 	node->data = data;
+	node->index = -1;
 	node->head = NULL;
 	node->prev = NULL;
 	node->next = NULL;

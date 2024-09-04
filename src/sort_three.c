@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:14:08 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/02 17:28:45 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:24:33 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	sort_first(t_stack_node **stack_a)
 	int	second;
 	int	third;
 	int	level;
-	
+
 	first = (*stack_a)->data;
 	second = ((*stack_a)->next)->data;
 	third = (*stack_a)->next->next->data;
@@ -40,21 +40,21 @@ void	sort_three(t_stack_node **stack_a)
 	int	level;
 
 	level = sort_first(stack_a);
-	if(level == TOP)
+	if (level == TOP)
 	{
 		rra(stack_a);
 		sa(stack_a);
 	}
-	if(level == MIDDLE_01)
+	if (level == MIDDLE_01)
 		rra(stack_a);
-	if(level == MIDDLE_02)
+	if (level == MIDDLE_02)
 		sa(stack_a);
-	if(level == BOTTOM_01)
+	if (level == BOTTOM_01)
 	{
 		ra(stack_a);
 		sa(stack_a);
 	}
 	if (level == BOTTOM_02)
 		ra(stack_a);
-	return;
+	return ;
 }
