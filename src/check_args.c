@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/04 15:27:25 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/13 20:04:50 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ char	**check_args(int argc, char **argv, t_data *data)
 	
 	split_args = NULL;
 	data->split = false;
+	if(is_empty(&argv[1]) == 1)
+		exit(write(2, "Error\n", 6)/6);
 	if (argc == 2)
 	{
 		split_args = ft_split(argv[1], ' ');
