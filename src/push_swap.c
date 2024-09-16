@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/13 20:53:10 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 15:15:51 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	get_stack_size(t_stack_node **stack)
 	tmp = *stack;
 	while (tmp != NULL)
 	{
-		tmp = (*tmp).next;
+		tmp = tmp->next;
 		size++;
 	}
 	(*stack)->size = size;
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 	// }
 	if (data.split == true)
 		free_array(new_argv);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

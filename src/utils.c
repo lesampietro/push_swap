@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:57:55 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/08/18 17:18:14 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 15:25:47 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ void	free_array(char **args)
 	free(args);
 }
 
-void	free_stack(t_stack_node *stack)
+void	free_stack(t_stack_node **stack)
 {
-	while (stack)
+	t_stack_node	*tmp;
+	t_stack_node	*curr;
+
+	curr = *stack;
+	while (curr != NULL)
 	{
-		if (!stack->next)
-			break;
-		stack = stack->next;
-		free(stack->prev);
+		tmp = curr;
+		curr = curr->next;
+		free(tmp);
 	}
-	free(stack);
 }

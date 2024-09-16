@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/13 17:55:19 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 15:28:30 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ struct s_data
 // Doubly linked list struct
 struct s_stack_node
 {
-	int					data;
-	int					size;
-	int					index;
 	struct s_stack_node	*head;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
+	int					data;
+	int					size;
+	int					index;
 };
 
 enum e_node_level
@@ -82,11 +82,11 @@ void					pb(t_stack_node **src_stack, t_stack_node **dest_stack);
 void					sort_three(t_stack_node **stack_a);
 int						sort_first(t_stack_node **stack_a);
 void					sort_five(t_stack_node **stack_a, t_stack_node **stack_b);
-void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
+void					radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // Error and free functions
 int						arg_error(char **split_args);
 void					free_array(char **args);
-void					free_stack(t_stack_node *stack_a);
+void					free_stack(t_stack_node **stack);
 
 #endif

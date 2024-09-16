@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:28:47 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/13 21:04:15 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 14:36:13 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 int	count_bits(t_stack_node **stack_a)
 {
-	static int	max_bits;
+	int	max_bits;
 
-	if(max_bits != 0)
-		return(max_bits);
+	max_bits = 0;
+	// if(max_bits != 0)
+	// 	return(max_bits);
 	while ((((*stack_a)->size - 1) >> max_bits) != 0)
-		++max_bits;
+		max_bits++;
 	return(max_bits);
 }
 
@@ -36,16 +37,16 @@ void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack_node	*tmp_a;
 	t_stack_node	*tmp_b;
-	int				empty_b;
+	// int				empty_b;
 	int				i;
 	int				j;
 	int				size;
 	
-	i = -1;
-	empty_b = 0;
-	get_stack_size(stack_a);
+	i = 0;
+	// empty_b = 0;
+	// get_stack_size(stack_a);
 	size = (*stack_a)->size;
-	while (++i < count_bits(stack_a))
+	while (i < count_bits(stack_a))
 	{
 		tmp_a = *stack_a;
 		tmp_b = *stack_b;
@@ -57,19 +58,20 @@ void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 				ra(&tmp_a);
 			}
 			else
-			{
+			// {
 				pb(&tmp_a, &tmp_b);
-				empty_b++;
-			}
+			// 	empty_b++;
+			// }
 			j++;
 		}
 		// ft_printf("%i\n", empty_b);
 		//ft_printf("antes\n");
 		//print_stack(*stack_a);
-		while(empty_b-- > 0)
+		while(*stack_b)
 			pa(&tmp_b, &tmp_a);
 		//ft_printf("depois\n");
 		//print_stack(*stack_a);
+		i++;
 	}
 }
 

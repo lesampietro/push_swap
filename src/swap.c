@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:08:16 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/11 17:38:10 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:31:21 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //static functions are only visible inside the file they are declared - for performance optimization purposes
 static void	swap(t_stack_node **stack)
 {
-	if (!(*stack) || (*stack)->size == 1)
+	if (!(*stack) || !stack)
 		return ;
 	*stack = (*stack)->next; //moving the stack pointer to the second node
 	((*stack)->prev)->prev = *stack; //making first node *prev pointer point to new stack position, which points to the second node

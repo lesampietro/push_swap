@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/11 17:47:54 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 14:58:39 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ t_stack_node	*create_node(int data)
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return (NULL);
-	node->data = data;
-	node->size = 0;
-	node->index = -1;
 	node->head = NULL;
 	node->prev = NULL;
 	node->next = NULL;
+	node->data = data;
+	node->size = 0;
+	node->index = -1;
 	return (node);
 }
 
@@ -67,6 +67,7 @@ void	create_stack(t_stack_node **stack_a, char **argv, t_data *data)
 	int	i;
 
 	i = 0;
+	nbr = 0;
 	while (argv[i])
 	{
 		nbr = ft_atoi(argv[i]);

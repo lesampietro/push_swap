@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:14:08 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/04 15:24:33 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 15:07:27 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	sort_first(t_stack_node **stack_a)
 	int	third;
 	int	level;
 
+	level = 0;
 	first = (*stack_a)->data;
 	second = ((*stack_a)->next)->data;
 	third = (*stack_a)->next->next->data;

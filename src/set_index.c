@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:28:47 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/11 17:12:46 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 15:49:41 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ void	set_index(t_stack_node **stack)
 {
 	t_stack_node	*min_node;
 	int	i;
+	int	stack_len;
 
 	i = 0;
-	while (i < (*stack)->size)
+	stack_len = (*stack)->size;
+	while (i < stack_len)
 	{
 		min_node = find_smallest_value(stack);
 		min_node->index = i;
