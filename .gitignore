@@ -1,4 +1,5 @@
 Push-Swap-Tester/
-/checker_linux
-/push_swap_test_linux.sh
-/traces.txt
+checker_linux
+push_swap_test_linux.sh
+traces.txt
+0
