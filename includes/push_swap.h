@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 18:06:56 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 22:30:37 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void					pb(t_stack_node **src_stack, t_stack_node **dest_stack);
 // Functions to sort the stack
 void					sort_three(t_stack_node **stack_a);
 int						sort_first(t_stack_node **stack_a);
-void					sort_five(t_stack_node **stack_a, t_stack_node **stack_b);
+void					sort_five_and_four(t_stack_node **stack_a, t_stack_node **stack_b);
 void					radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // Error and free functions

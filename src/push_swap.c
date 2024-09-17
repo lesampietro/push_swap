@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:10 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 21:53:25 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 23:43:32 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	sort(t_stack_node **stack_a, t_stack_node **stack_b)
 			sa(stack_a);
 		else if (get_stack_size(stack_a) == 3)
 			sort_three(stack_a);
-		// else if (get_stack_size(stack_a) == 4 \
-		// 		|| get_stack_size(stack_a) == 5)
-		// 	sort_five(stack_a, stack_b);
+		else if (get_stack_size(stack_a) == 4 \
+				|| get_stack_size(stack_a) == 5)
+			sort_five_and_four(stack_a, stack_b);
 		else
 			radix_sort(stack_a, stack_b);
 	}
@@ -63,6 +63,8 @@ int	main(int argc, char **argv)
 {
 	t_stack_node	*stack_a;
 	t_stack_node	*stack_b;
+	// t_stack_node	*tmp_a; // tirar
+	// t_stack_node	*tmp_b; // tirar
 	t_data			data;
 	char			**new_argv;
 
@@ -73,26 +75,24 @@ int	main(int argc, char **argv)
 	new_argv = check_args(argc, argv, &data);
 	create_stack(&stack_a, new_argv, &data);
 	sort(&stack_a, &stack_b);
+	// tmp_a = stack_a;
+	// tmp_b = stack_b;
+	// int i = 0;
+	// while (tmp_a != NULL)
+	// {
+	// 	ft_printf("node %i data: %i - index: %i\n", i, tmp_a->data, tmp_a->index);
+	// 	tmp_a = tmp_a->next;
+	// 	i++;
+	// }
+	// i = 0;
+	// while (tmp_b != NULL)
+	// {
+	// 	ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
+	// 	tmp_b = tmp_b->next;
+	// }
 	if (data.split == true)
 		free_array(new_argv);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
 }
-
-// t_stack_node	*tmp_a; // tirar
-// t_stack_node	*tmp_b; // tirar
-// tmp_a = stack_a;
-// tmp_b = stack_b;
-// int i = 0;
-// while (tmp_a != NULL)
-// {
-// 	ft_printf("tmp_a 0%i: %d\n", i++, tmp_a->data);
-// 	tmp_a = tmp_a->next;
-// }
-// i = 0;
-// while (tmp_b != NULL)
-// {
-// 	ft_printf("tmp_b 0%i: %d\n", i++, tmp_b->data);
-// 	tmp_b = tmp_b->next;
-// }

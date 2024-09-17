@@ -6,65 +6,87 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 20:53:42 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 21:56:12 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 23:45:41 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-// int	find_diff(t_stack_node *node, t_stack_node **stack_a)
-// {
-// 	t_stack_node *tmp;
-// 	int	i = 0;
+int	find_diff(t_stack_node *node, t_stack_node **stack_a)
+{
+	int	i;
 
-// 	tmp = node;
-// 	while(tmp != *stack_a)
-// 	{
-// 		tmp = tmp->next;
-// 		i++;
-// 	}
-// 	ft_printf("diff: %i\n", i);
-// 	return (i);
-// }
+	i = 0;
+	ft_printf("min_node -> data: %i, index %i\n", node->data, node->index);
+	while(node != *stack_a)
+	{
+		node = node->prev;
+		i++;
+	}
+	ft_printf("diff: %i\n", i);
+	return (i);
+}
 
-// t_stack_node	*find_min(t_stack_node **stack_a, int index)
-// {
-// 	t_stack_node	*tmp;
+t_stack_node	*find_min(t_stack_node **stack_a, int index)
+{
+	t_stack_node	*tmp;
 
-// 	tmp = *stack_a;
-// 	while(tmp->index != index)
-// 		tmp = tmp->next;
-// 	return (tmp);
-// }
+	tmp = *stack_a;
+	while(tmp->index != index)
+		tmp = tmp->next;
+	return (tmp);
+}
 
-// void	sort_five(t_stack_node **stack_a, t_stack_node **stack_b)
-// {
-// 	t_stack_node	*min_00;
-// 	t_stack_node	*min_01;
-// 	int				diff;
-// 	int				stack_size;
+void push_min_node(t_stack_node **stack_a, t_stack_node **stack_b, t_stack_node *min_node)
+{
+	int	diff;
+	static int	size = 4;
 
-// 	stack_size =
-// 	min_00 = find_min(stack_a, 0);
-// 	diff = find_diff(min_00, stack_a);
-// 	pb(stack_a, stack_b);
-// 	min_01 = find_min(stack_a, 1);
-// 	sort_three(stack_a);
-// 	pa(stack_b, stack_a);
-// 	pa(stack_b, stack_a);
-// }
+	diff = find_diff(min_node, stack_a);
+	if (diff == 0)
+		pb(stack_a, stack_b);
+	// if (diff == 1)
+	if (diff == 1 || diff == 2)
+	{
+		while(diff > 0)
+		{
+			ra(stack_a);
+			diff--;
+		}
+		pb(stack_a, stack_b);
+	}
+	if (diff > 2)
+	{
+		while(diff < size)
+		{
+			rra(stack_a);
+			diff++;
+		}
+		pb(stack_a, stack_b);
+		size = 3;
+	}
+}
 
-	// if(diff == 1)
-	// 	ra(stack_a);
-	// if (diff == 2)
-	// {
-	// 	ra(stack_a);
-	// 	ra(stack_a);
-	// }
-	// if (diff == 3)
-	// {
-	// 	rra(stack_a);
-	// 	rra(stack_a);
-	// }
-	// if (diff == 4)
-	// 	rra(stack_a);
+void	sort_five_and_four(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	t_stack_node	*min_node;
+	int				stack_size;
+
+	stack_size = get_stack_size(stack_a);
+	min_node = find_min(stack_a, 0);
+	if(stack_size == 4)
+	{
+		push_min_node(stack_a, stack_b, min_node);
+		sort_three(stack_a);
+		pa(stack_b, stack_a);
+	}
+	else
+	{
+		push_min_node(stack_a, stack_b, min_node);
+		min_node = find_min(stack_a, 1);
+		push_min_node(stack_a, stack_b, min_node);
+		sort_three(stack_a);
+		pa(stack_b, stack_a);
+		pa(stack_b, stack_a);
+	}
+}

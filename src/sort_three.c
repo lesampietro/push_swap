@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:14:08 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 15:07:27 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 23:35:26 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	sort_three(t_stack_node **stack_a)
 {
 	int	level;
 
+	if (is_sorted(stack_a))
+		return;
 	level = sort_first(stack_a);
 	if (level == TOP)
 	{
