@@ -6,7 +6,7 @@
 #    By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 19:54:47 by lsampiet          #+#    #+#              #
-#    Updated: 2024/09/13 17:56:13 by lsampiet         ###   ########.fr        #
+#    Updated: 2024/09/16 21:34:14 by lsampiet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC= push_swap.c \
 	 reverse_rotate.c \
 	 push.c \
 	 sort_three.c \
+	 sort_five.c \
 	 set_index.c \
 	 radix.c
 

@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:32:44 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/13 20:52:21 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 19:01:52 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 static void	manage_src(t_stack_node **src_stack)
 {
-	get_stack_size(src_stack);
-	if ((*src_stack)->size == 1)
+	int	stack_size;
+
+	stack_size = get_stack_size(src_stack);
+	if (stack_size == 1)
 		*src_stack = NULL;
-	else if ((*src_stack)->size > 1)
+	else if (stack_size > 1)
 	{
 		*src_stack = (*src_stack)->next;
 		(*src_stack)->prev = NULL;
@@ -42,7 +44,7 @@ static void	push(t_stack_node **src_stack, t_stack_node **dest_stack)
 	}
 	else
 	{
-		( *dest_stack)->prev = node_to_push;
+		(*dest_stack)->prev = node_to_push;
 		node_to_push->next = *dest_stack;
 		*dest_stack = node_to_push;
 	}

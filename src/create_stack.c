@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 14:58:39 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:53:02 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack_node	*create_node(int data)
 	node->prev = NULL;
 	node->next = NULL;
 	node->data = data;
-	node->size = 0;
 	node->index = -1;
 	return (node);
 }
@@ -74,7 +73,7 @@ void	create_stack(t_stack_node **stack_a, char **argv, t_data *data)
 		if (check_duplicates(nbr, *stack_a) == 1)
 		{
 			ft_putstr_fd("Error\n", 2);
-			free_stack(*stack_a);
+			free_stack(stack_a);
 			if(data->split == true)
 				free_array(argv);
 			exit (1);
@@ -82,4 +81,5 @@ void	create_stack(t_stack_node **stack_a, char **argv, t_data *data)
 		append_node(stack_a, nbr);
 		i++;
 	}
+	set_index(stack_a);
 }

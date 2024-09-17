@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 17:37:58 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 15:03:27 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:58:56 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	is_empty(char **str)
 	int i;
 
 	i = 0;
+	if (str[0] == NULL)
+		return (1);
 	while (str[i])
 	{
 		if (str[i][0] == '\0')

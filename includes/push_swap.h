@@ -6,7 +6,7 @@
 /*   By: lsampiet <lsampiet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:48:05 by lsampiet          #+#    #+#             */
-/*   Updated: 2024/09/16 15:28:30 by lsampiet         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:06:56 by lsampiet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ struct s_stack_node
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 	int					data;
-	int					size;
 	int					index;
 };
 
@@ -58,7 +57,7 @@ int						is_sorted(t_stack_node **stack);
 // Functions to create stacks
 void					create_stack(t_stack_node **stack_a, char **argv, t_data *data);
 t_stack_node			*create_node(int data);
-void					get_stack_size(t_stack_node **stack);
+int						get_stack_size(t_stack_node **stack);
 
 // Functions to find nodes with specific positions or values
 t_stack_node			*find_last_node(t_stack_node *stack_a);
